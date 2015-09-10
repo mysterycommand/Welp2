@@ -36,7 +36,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.backgroundColor = UIColor.randomColor()
         tableView.registerClass(BusinessTableViewCell.self, forCellReuseIdentifier: "BusinessTableViewCell")
         
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 116
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.dataSource = self

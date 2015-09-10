@@ -28,6 +28,24 @@ class BusinessTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        imageView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        textLabel?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        textLabel?.sizeToFit()
+
+        let views: [String: UIView] = [
+            "imageView": imageView!,
+            "textLabel": textLabel!
+        ]
+        
+        let VFLH = "H:|-8-[imageView(==100)]-8-[textLabel]-8-|"
+        let VFLV = "V:|-8-[imageView(==100)]-8-|"
+        
+        let tableViewContraintsH = NSLayoutConstraint.constraintsWithVisualFormat(VFLH, options: .None, metrics: nil, views: views)
+        let tableViewContraintsV = NSLayoutConstraint.constraintsWithVisualFormat(VFLV, options: .None, metrics: nil, views: views)
+        
+        contentView.addConstraints(tableViewContraintsH)
+        contentView.addConstraints(tableViewContraintsV)
     }
     
     func update() {
