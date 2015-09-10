@@ -27,6 +27,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         tableView = UITableView()
         tableView.frame = UIScreen.mainScreen().bounds
+        tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Welp"
@@ -38,7 +39,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
+        view.frame = UIScreen.mainScreen().bounds
         view.backgroundColor = UIColor.randomColor()
         view.addSubview(tableView)
 
@@ -84,7 +86,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BusinessTableViewCell", forIndexPath: indexPath) as! BusinessTableViewCell
         
-        println("hi")
         let business = self.businesses![indexPath.row]
         cell.textLabel?.text = business.name
         
