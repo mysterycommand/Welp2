@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7424D7F026D8C557F44492F9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F95F6A1D7886AF53070DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		84CC713C1BA130A7004CBBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC713B1BA130A7004CBBA3 /* AppDelegate.swift */; };
 		84CC713E1BA130A7004CBBA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC713D1BA130A7004CBBA3 /* ViewController.swift */; };
 		84CC71431BA130A7004CBBA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CC71421BA130A7004CBBA3 /* Images.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A6FE24D0A889C71187C707E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		84CC71361BA130A7004CBBA3 /* Welp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CC713A1BA130A7004CBBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CC713B1BA130A7004CBBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		84CC714B1BA130A7004CBBA3 /* WelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CC71501BA130A7004CBBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CC71511BA130A7004CBBA3 /* WelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelpTests.swift; sourceTree = "<group>"; };
+		B367D8C14CF0818935F74C25 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F14F95F6A1D7886AF53070DF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7424D7F026D8C557F44492F9 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82DA5375C5609BABE018722A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A6FE24D0A889C71187C707E /* Pods.debug.xcconfig */,
+				B367D8C14CF0818935F74C25 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84CC712D1BA130A7004CBBA3 = {
 			isa = PBXGroup;
 			children = (
 				84CC71381BA130A7004CBBA3 /* Welp */,
 				84CC714E1BA130A7004CBBA3 /* WelpTests */,
 				84CC71371BA130A7004CBBA3 /* Products */,
+				82DA5375C5609BABE018722A /* Pods */,
+				A56B8DC549CCF7C642D41D26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +125,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A56B8DC549CCF7C642D41D26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F14F95F6A1D7886AF53070DF /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84CC71551BA130A7004CBBA3 /* Build configuration list for PBXNativeTarget "Welp" */;
 			buildPhases = (
+				FB7F4C3CBAD2C57849C03425 /* Check Pods Manifest.lock */,
 				84CC71321BA130A7004CBBA3 /* Sources */,
 				84CC71331BA130A7004CBBA3 /* Frameworks */,
 				84CC71341BA130A7004CBBA3 /* Resources */,
+				CBB8D80CF469B74D5370D731 /* Embed Pods Frameworks */,
+				7EF748A8BD75D468D38D47FC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +229,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7EF748A8BD75D468D38D47FC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBB8D80CF469B74D5370D731 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7F4C3CBAD2C57849C03425 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84CC71321BA130A7004CBBA3 /* Sources */ = {
@@ -326,6 +401,7 @@
 		};
 		84CC71561BA130A7004CBBA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A6FE24D0A889C71187C707E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Welp/Info.plist;
@@ -336,6 +412,7 @@
 		};
 		84CC71571BA130A7004CBBA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B367D8C14CF0818935F74C25 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Welp/Info.plist;
@@ -397,6 +474,7 @@
 				84CC71571BA130A7004CBBA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84CC71581BA130A7004CBBA3 /* Build configuration list for PBXNativeTarget "WelpTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +483,7 @@
 				84CC715A1BA130A7004CBBA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
