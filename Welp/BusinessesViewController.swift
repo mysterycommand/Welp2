@@ -26,6 +26,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         tableView = UITableView()
+        tableView.frame = UIScreen.mainScreen().bounds
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Welp"
@@ -50,8 +51,11 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         let VFLH = "H:|-8-[tableView]-8-|"
         let VFLV = "V:|-8-[tableView]-8-|"
         
-        let tableViewContraintH = NSLayoutConstraint.constraintsWithVisualFormat(VFLH, options: .None, metrics: nil, views: views)
-        let tableViewContraintV = NSLayoutConstraint.constraintsWithVisualFormat(VFLV, options: .None, metrics: nil, views: views)
+        let tableViewContraintsH = NSLayoutConstraint.constraintsWithVisualFormat(VFLH, options: .None, metrics: nil, views: views)
+        let tableViewContraintsV = NSLayoutConstraint.constraintsWithVisualFormat(VFLV, options: .None, metrics: nil, views: views)
+        
+        view.addConstraints(tableViewContraintsH)
+        view.addConstraints(tableViewContraintsV)
         
         Yelp.instance.search("Restaurants", completion: {
             (businesses: [Business]!, error: NSError!) -> Void in
