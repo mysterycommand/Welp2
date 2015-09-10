@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BusinessesViewController: UIViewController {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.title = "Welp"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.randomColor()
     }
 
     override func didReceiveMemoryWarning() {
