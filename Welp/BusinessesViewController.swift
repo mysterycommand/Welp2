@@ -25,10 +25,11 @@ class BusinessesViewController: UIViewController {
         view.backgroundColor = UIColor.randomColor()
         
         Yelp.instance.search("Restaurants", completion: {
-            (dicts: [NSDictionary]!, error: NSError!) -> Void in
+            (businesses: [Business]!, error: NSError!) -> Void in
             
-            println("Dicts \(dicts)")
-            println("Error \(error)")
+            if let businesses = businesses {
+                businesses.map({business in println(business.name!)})
+            }
         });
     }
 

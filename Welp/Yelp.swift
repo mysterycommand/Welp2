@@ -57,11 +57,11 @@ class Yelp: BDBOAuth1RequestOperationManager {
         self.requestSerializer.saveAccessToken(accessToken)
     }
     
-    func search(term: String, completion: ([NSDictionary]!, NSError!) -> Void) -> AFHTTPRequestOperation {
+    func search(term: String, completion: ([Business]!, NSError!) -> Void) -> AFHTTPRequestOperation {
         return search(term, sort: nil, categories: nil, deals: nil, completion: completion)
     }
 
-    func search(term: String, sort: YelpSort?, categories: [String]?, deals: Bool?, completion: ([NSDictionary]!, NSError!) -> Void) -> AFHTTPRequestOperation {
+    func search(term: String, sort: YelpSort?, categories: [String]?, deals: Bool?, completion: ([Business]!, NSError!) -> Void) -> AFHTTPRequestOperation {
         // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
         
         // Default the location to San Francisco
@@ -89,7 +89,7 @@ class Yelp: BDBOAuth1RequestOperationManager {
             
             var dictionaries = response["businesses"] as? [NSDictionary]
             if let dictionaries = dictionaries {
-                completion(dictionaries, nil)
+                completion(dictionaries.map({dictionary in Business(dict: dictionary)}), nil)
             }
         }, failure: {
             (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
