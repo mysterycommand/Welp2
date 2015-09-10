@@ -25,12 +25,19 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.title = "Welp"
+        
         tableView = UITableView()
         tableView.frame = UIScreen.mainScreen().bounds
         tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.title = "Welp"
+        tableView.separatorStyle = .None
+        tableView.backgroundColor = UIColor.randomColor()
+        tableView.registerClass(BusinessTableViewCell.self, forCellReuseIdentifier: "BusinessTableViewCell")
+        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -43,10 +50,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         view.frame = UIScreen.mainScreen().bounds
         view.backgroundColor = UIColor.randomColor()
         view.addSubview(tableView)
-
-        tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor.randomColor()
-        tableView.registerClass(BusinessTableViewCell.self, forCellReuseIdentifier: "BusinessTableViewCell")
 
         let views = ["tableView": tableView]
         
@@ -85,10 +88,9 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BusinessTableViewCell", forIndexPath: indexPath) as! BusinessTableViewCell
-        
-        let business = self.businesses![indexPath.row]
-        cell.textLabel?.text = business.name
-        
+
+        cell.business = self.businesses![indexPath.row]
+
         return cell
     }
 

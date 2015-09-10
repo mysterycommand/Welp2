@@ -24,8 +24,22 @@ class Business {
     init(dict: NSDictionary) {
         id = dict["id"] as? String
         name = dict["name"] as? String
-        if let addressParts = dict.valueForKeyPath("location.display_address") as? [String] {
-            address = "\n".join(addressParts)
+        
+        var street = ""
+        if let location = dict["location"] as? NSDictionary {
+            if let addr = location["address"] as? String {
+                street += addr
+            }
+
+            if let hood = location["neighborhoods"] as? [String] {
+                if !street.isEmpty {
+                    street = ", "
+                }
+
+                street += hood[0]
+            }
+
+            address = street
         }
         
         if let imageURLString = dict["image_url"] as? String {
