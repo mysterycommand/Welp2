@@ -23,6 +23,13 @@ class BusinessesViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor.randomColor()
+        
+        Yelp.instance.search("Restaurants", completion: {
+            (dicts: [NSDictionary]!, error: NSError!) -> Void in
+            
+            println("Dicts \(dicts)")
+            println("Error \(error)")
+        });
     }
 
     override func didReceiveMemoryWarning() {
