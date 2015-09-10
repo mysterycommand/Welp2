@@ -16,7 +16,7 @@ extension NSLayoutFormatOptions {
 
 class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var businesses: [Business]?
+    var businesses: [Business]!
     
     var tableView: UITableView!
     
@@ -37,10 +37,14 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = UIColor.randomColor()
 
+        view.backgroundColor = UIColor.randomColor()
         view.addSubview(tableView)
+
+        tableView.separatorStyle = .None
         tableView.backgroundColor = UIColor.randomColor()
+        tableView.registerClass(BusinessTableViewCell.self, forCellReuseIdentifier: "BusinessTableViewCell")
+
         let views = ["tableView": tableView]
         
         let VFLH = "H:|-8-[tableView]-8-|"
@@ -57,6 +61,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
 //            }
             
             self.businesses = businesses
+            self.tableView.reloadData()
         });
     }
 
@@ -66,11 +71,19 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if let businesses = self.businesses {
+            return businesses.count
+        }
+        return 0
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BusinessViewCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("BusinessTableViewCell", forIndexPath: indexPath) as! BusinessTableViewCell
+        
+        println("hi")
+        let business = self.businesses![indexPath.row]
+        cell.textLabel?.text = business.name
+        
         return cell
     }
 

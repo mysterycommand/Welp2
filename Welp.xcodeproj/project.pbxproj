@@ -10,6 +10,7 @@
 		7CCEFFDF6F49E95CF4EC19C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B3318D50343D5C3B9C1918 /* libPods.a */; };
 		84411CBF1BA136AC0046FBC8 /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411CBE1BA136AC0046FBC8 /* Yelp.swift */; };
 		84411CC21BA145050046FBC8 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411CC11BA145050046FBC8 /* Business.swift */; };
+		84411CC51BA153250046FBC8 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411CC41BA153250046FBC8 /* BusinessTableViewCell.swift */; };
 		84CC713C1BA130A7004CBBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC713B1BA130A7004CBBA3 /* AppDelegate.swift */; };
 		84CC713E1BA130A7004CBBA3 /* BusinessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC713D1BA130A7004CBBA3 /* BusinessesViewController.swift */; };
 		84CC71431BA130A7004CBBA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CC71421BA130A7004CBBA3 /* Images.xcassets */; };
@@ -32,6 +33,7 @@
 		84411CB91BA131C00046FBC8 /* Welp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Welp-Bridging-Header.h"; sourceTree = "<group>"; };
 		84411CBE1BA136AC0046FBC8 /* Yelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		84411CC11BA145050046FBC8 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		84411CC41BA153250046FBC8 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		84CC71361BA130A7004CBBA3 /* Welp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CC713A1BA130A7004CBBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CC713B1BA130A7004CBBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		84411CC31BA153080046FBC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84411CC41BA153250046FBC8 /* BusinessTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		84CC712D1BA130A7004CBBA3 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				84CC713B1BA130A7004CBBA3 /* AppDelegate.swift */,
+				84411CC31BA153080046FBC8 /* Views */,
 				84411CC01BA144F90046FBC8 /* Models */,
 				84411CBD1BA1367E0046FBC8 /* API */,
 				84411CBC1BA132250046FBC8 /* View Controllers */,
@@ -299,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84411CC51BA153250046FBC8 /* BusinessTableViewCell.swift in Sources */,
 				84411CBF1BA136AC0046FBC8 /* Yelp.swift in Sources */,
 				84411CC21BA145050046FBC8 /* Business.swift in Sources */,
 				84CC713E1BA130A7004CBBA3 /* BusinessesViewController.swift in Sources */,
